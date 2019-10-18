@@ -1,9 +1,37 @@
-$(document).ready(function(){    
+$(document).ready(function(){ 
+    var select_gunluk = document.getElementById("selectgunluk");
+    var gunluk_options = ["gunlukveriler","Adana","Adapazari","Adiyaman","Afyonkarahisar", "Agri","Aksaray","Amasya","Ankara","Antalya","Ardahan","Artvin",
+        "Aydin","Balikesir","Bartin","Batman","Bayburt","Bilecik","Bingol","Bitlis","Bolu","Burdur","Bursa","Canakkale","Cankırı","Corum",
+        "Denizli","Diyarbakir","Duzce","Edirne","Elazig","Erzincan","Erzurum","Eskisehir","Gaziantep","Giresun","Gumushkhane","Hakkari","Antioch","Isparta",
+        "Igdir","Istanbul","Izmir","Kahramanmaras","Karabuk","Karaman","Kars","Kastamonu","Kayseri","Kilis","Kirikkale","Kirklareli","Kirsehir","Kocaeli",
+        "Konya","Kutahya","Malatya","Manisa","Mardin","Icel","Mugla","Mus","Nevsehir","Nigde","Ordu","Osmaniye","Rize","Samsun","Siirt",
+        "Sinop","Sirnak","Sivas","Tekirdag","Tokat","Trabzon","Tunceli","Sanliurfa","Usak","Van","Yalova","Yozgat","Zonguldak"];
+    for(var i=0;i<gunluk_options.length;i++){
+        var opt = gunluk_options[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select_gunluk.appendChild(el);
+    }
+    var select_gecmis = document.getElementById("selectgecmis");
+    var gecmis_options=["gecmisveriler","ADAPAZARI, TU","ADIYAMAN, TU","AFYON, TU","AGRI, TU","ANKARA CENTRAL, TU","ANTALYA, TU","ARTVIN, TU",
+        "AYDIN, TU","BALIKESIR, TU","BATMAN, TU","BINGOL, TU","BOLU, TU","BURSA, TU","CANAKKALE, TU","CANKIRI, TU","CORUM, TU","DENIZLI, TU",
+        "DIYARBAKIR, TU","EDIRNE, TU","ELAZIG, TU","ERZINCAN, TU","ERZURUM, TU","GIRESUN, TU","GUMUSHANE, TU","HAKKARI, TU","ISPARTA, TU",
+        "KAHRAMANMARAS, TU","KARS, TU","KASTAMONU, TU","KIRSEHIR, TU","KONYA, TU","KUTAHYA, TU","MALATYA BOLGE, TU","MERSIN, TU","MUGLA, TU",
+        "MUS, TU","NEVSEHIR, TU","NIGDE, TU","SAMSUN, TU","SIIRT, TU","SINOP, TU","SIVAS, TU","SANLIURFA, TU","TEKIRDAG, TU","TOKAT, TU",
+        "USAK, TU","VAN, TU","YOZGAT, TU","ZONGULDAK, TU"];
+        for(var i=0;i<gecmis_options.length;i++){
+            var opt = gecmis_options[i];
+            var el = document.createElement("option");
+            el.textContent = opt;
+            el.value = opt;
+            select_gecmis.appendChild(el);
+        }   
     $("#selectgecmis").hide();    
     $('#dailyWeatherTable').hide();        
     $('#historicalWeatherTable').hide();        
     var now = new Date();
-
+    
     $("#datepickers").hide();
     $("#initday").datepicker({
         defaultDate: now,
